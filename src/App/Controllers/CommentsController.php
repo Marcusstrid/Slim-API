@@ -30,7 +30,7 @@ class CommentsController
 
     public function getTwentyLastComments(){
 
-        $getTwentyComments = $this->db->prepare('SELECT * FROM comments LIMIT 20');
+        $getTwentyComments = $this->db->prepare('SELECT * FROM comments DESC LIMIT 20');
         $getTwentyComments->execute();
         $TwentyComments= $getTwentyComments->fetchAll();
         return $TwentyComments;

@@ -126,18 +126,18 @@ $app->group('/api', function () use ($app) {
    
     $params = $request->getQueryParams();
 
-    if(isset($_GET[$params])){
+    // if(isset($_GET[$params])){
         $twentyEntries = $this->entries->getTwentyEntries();
             
         return $response->withJson(['data' => $twentyEntries]);
     
-       }
-       else{
+    //    }
+    //    else{
    
     $allEntries = $this->entries->getAll();
   
     return $response->withJson(['data' => $allEntries]);
-       }
+    //    }
 
        
     });
